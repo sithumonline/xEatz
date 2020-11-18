@@ -10,19 +10,19 @@ import (
 	"github.com/ebonynon/xEatz/db"
 )
 
-// AddRestaurants adds a new restaurants
-// POST /addrestaurants
-func AddRestaurants(w http.ResponseWriter, r *http.Request) {
+// AddARestaurant adds a new restaurant
+// POST /addrestaurant
+func AddARestaurant(w http.ResponseWriter, r *http.Request) {
 
-	var restaurants Restaurants
+	var restaurant Restaurants
 	OpenDB := db.Database()
 
-	json.NewDecoder(r.Body).Decode(&restaurants)
+	json.NewDecoder(r.Body).Decode(&restaurant)
 
-	fmt.Println(restaurants)
+	fmt.Println(restaurant)
 
 	OpenDB.AutoMigrate(&Restaurants{})
-	OpenDB.Create(&restaurants)
+	OpenDB.Create(&restaurant)
 
 	defer OpenDB.Close()
 }
