@@ -54,3 +54,19 @@ func GetARestaurant(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&restaurant)
 
 }
+
+// DeleteARestaurant drop restaurant
+// DELETE /droprestaurant
+func DeleteARestaurant(w http.ResponseWriter, r *http.Request) {
+
+	var restaurant Restaurants
+	var restaurants []Restaurants
+	restaurantID := chi.URLParam(r, "id")
+
+	OpenDB.First(&restaurant, restaurantID)
+	OpenDB.Delete(&restaurant)
+	OpenDB.Find(&restaurants)
+
+	json.NewEncoder(w).Encode(&restaurants)
+
+}

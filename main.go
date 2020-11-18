@@ -30,5 +30,6 @@ func main() {
 	r.Post("/addrestaurant", restaurants.AddARestaurant)
 	r.Get("/getrestaurants", restaurants.GetRestaurants)
 	r.Get("/getrestaurant/{id}", restaurants.GetARestaurant)
+	r.Delete("/droprestaurant/{id}", restaurants.DeleteARestaurant)
 	http.ListenAndServe(":"+getPort("PORT"), r)
 }
