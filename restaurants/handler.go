@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/go-chi/chi"
+
 	"github.com/ebonynon/xEatz/db"
 )
 
@@ -35,5 +37,20 @@ func GetRestaurants(w http.ResponseWriter, r *http.Request) {
 	OpenDB.Find(&restaurants)
 
 	json.NewEncoder(w).Encode(&restaurants)
+
+}
+
+// GetARestaurant returns restaurant
+// GET /getrestaurant
+func GetARestaurant(w http.ResponseWriter, r *http.Request) {
+
+	var restaurant Restaurants
+	restaurantID := chi.URLParam(r, "id")
+
+	OpenDB := db.Database()
+
+	OpenDB.First(&restaurant, restaurantID)
+
+	json.NewEncoder(w).Encode(&restaurant)
 
 }
