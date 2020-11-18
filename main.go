@@ -7,6 +7,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 
+	"github.com/ebonynon/xEatz/fooditems"
 	"github.com/ebonynon/xEatz/restaurants"
 )
 
@@ -32,6 +33,11 @@ func main() {
 	r.Get("/getrestaurants", restaurants.GetRestaurants)
 	r.Get("/getrestaurant/{id}", restaurants.GetARestaurant)
 	r.Delete("/droprestaurant/{id}", restaurants.DeleteARestaurant)
+
+	r.Post("/addfooditem", fooditems.AddAFoodItem)
+	r.Get("/getfooditems", fooditems.GetFoodItems)
+	r.Get("/getfooditem/{id}", fooditems.GetAFoodItem)
+	r.Delete("/dropfooditem/{id}", fooditems.DeleteAFoodItem)
 
 	http.ListenAndServe(":"+getPort("PORT"), r)
 
