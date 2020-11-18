@@ -28,5 +28,6 @@ func main() {
 	}
 
 	r.Post("/addrestaurants", restaurants.AddRestaurants)
+	r.Get("/getrestaurants", restaurants.GetRestaurants)
 	http.ListenAndServe(":"+getPort("PORT"), r)
 }

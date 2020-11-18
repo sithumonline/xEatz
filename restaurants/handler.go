@@ -24,3 +24,16 @@ func AddRestaurants(w http.ResponseWriter, r *http.Request) {
 
 	defer OpenDB.Close()
 }
+
+// GetRestaurants returns restaurants
+// GET /getrestaurants
+func GetRestaurants(w http.ResponseWriter, r *http.Request) {
+
+	var restaurants []Restaurants
+	OpenDB := db.Database()
+
+	OpenDB.Find(&restaurants)
+
+	json.NewEncoder(w).Encode(&restaurants)
+
+}
