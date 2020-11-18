@@ -2,7 +2,7 @@ package fooditems
 
 import "github.com/jinzhu/gorm"
 
-// Restaurants defines the properties of a restaurants
+// FoodItems defines the properties of a fooditems
 type FoodItems struct {
 	gorm.Model
 	ItmID      int
