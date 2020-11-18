@@ -42,7 +42,7 @@ func GetRestaurants(w http.ResponseWriter, r *http.Request) {
 }
 
 // GetARestaurant returns restaurant
-// GET /getrestaurant
+// GET /getrestaurant/{id}
 func GetARestaurant(w http.ResponseWriter, r *http.Request) {
 
 	var restaurant Restaurants
@@ -55,7 +55,7 @@ func GetARestaurant(w http.ResponseWriter, r *http.Request) {
 }
 
 // DeleteARestaurant drop restaurant
-// DELETE /droprestaurant
+// DELETE /droprestaurant/{id}
 func DeleteARestaurant(w http.ResponseWriter, r *http.Request) {
 
 	var restaurant Restaurants
