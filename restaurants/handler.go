@@ -6,16 +6,19 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
+	"github.com/jinzhu/gorm"
 
 	"github.com/ebonynon/xEatz/db"
 )
+
+// OpenDB declare the database
+var OpenDB *gorm.DB = db.Database()
 
 // AddARestaurant adds a new restaurant
 // POST /addrestaurant
 func AddARestaurant(w http.ResponseWriter, r *http.Request) {
 
 	var restaurant Restaurants
-	OpenDB := db.Database()
 
 	json.NewDecoder(r.Body).Decode(&restaurant)
 
@@ -32,7 +35,6 @@ func AddARestaurant(w http.ResponseWriter, r *http.Request) {
 func GetRestaurants(w http.ResponseWriter, r *http.Request) {
 
 	var restaurants []Restaurants
-	OpenDB := db.Database()
 
 	OpenDB.Find(&restaurants)
 
@@ -46,8 +48,6 @@ func GetARestaurant(w http.ResponseWriter, r *http.Request) {
 
 	var restaurant Restaurants
 	restaurantID := chi.URLParam(r, "id")
-
-	OpenDB := db.Database()
 
 	OpenDB.First(&restaurant, restaurantID)
 
