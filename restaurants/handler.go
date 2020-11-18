@@ -27,7 +27,6 @@ func AddARestaurant(w http.ResponseWriter, r *http.Request) {
 	OpenDB.AutoMigrate(&Restaurants{})
 	OpenDB.Create(&restaurant)
 
-	defer OpenDB.Close()
 }
 
 // GetRestaurants returns restaurants
