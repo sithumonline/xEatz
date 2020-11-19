@@ -9,6 +9,7 @@ import (
 
 	"github.com/ebonynon/xEatz/customers"
 	"github.com/ebonynon/xEatz/fooditems"
+	"github.com/ebonynon/xEatz/orders"
 	"github.com/ebonynon/xEatz/restaurants"
 )
 
@@ -44,6 +45,11 @@ func main() {
 	r.Get("/getcustomers", customers.GetCustomers)
 	r.Get("/getcustomer/{id}", customers.GetACustomer)
 	r.Delete("/dropcustomer/{id}", customers.DeleteACustomer)
+
+	r.Post("/addorder", orders.AddAOrder)
+	r.Get("/getorders", orders.GetOrders)
+	r.Get("/getorder/{id}", orders.GetAOrder)
+	r.Delete("/droporder/{id}", orders.DeleteAOrder)
 
 	http.ListenAndServe(":"+getPort("PORT"), r)
 
