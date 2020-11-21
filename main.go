@@ -31,26 +31,26 @@ func main() {
 
 	}
 
-	r.Post("/addrestaurant", restaurants.AddARestaurant)
-	r.Get("/getrestaurants", restaurants.GetRestaurants)
-	r.Get("/getrestaurant/{id}", restaurants.GetARestaurant)
-	r.Delete("/droprestaurant/{id}", restaurants.DeleteARestaurant)
+	r.Post	("/orders", orders.AddAOrder)
+	r.Get	("/orders", orders.GetOrders)
+	r.Get	("/orders/{id}", orders.GetAOrder)
+	r.Delete("/orders/{id}", orders.DeleteAOrder)
 
-	r.Post("/addfooditem", fooditems.AddAFoodItem)
-	r.Get("/getfooditems", fooditems.GetFoodItems)
-	r.Get("/getfooditem/{id}", fooditems.GetAFoodItem)
-	r.Delete("/dropfooditem/{id}", fooditems.DeleteAFoodItem)
+	r.Post	("/customers", customers.AddACustomer)
+	r.Get	("/customers", customers.GetCustomers)
+	r.Get	("/customers/{id}", customers.GetACustomer)
+	r.Delete("/customer/{id}", customers.DeleteACustomer)
 
-	r.Post("/addcustomer", customers.AddACustomer)
-	r.Get("/getcustomers", customers.GetCustomers)
-	r.Get("/getcustomer/{id}", customers.GetACustomer)
-	r.Delete("/dropcustomer/{id}", customers.DeleteACustomer)
+	r.Post	("/food-items", fooditems.AddAFoodItem)
+	r.Get	("/food-items", fooditems.GetFoodItems)
+	r.Get	("/food-items/{id}", fooditems.GetAFoodItem)
+	r.Delete("/food-items/{id}", fooditems.DeleteAFoodItem)
 
-	r.Post("/addorder", orders.AddAOrder)
-	r.Get("/getorders", orders.GetOrders)
-	r.Get("/getorder/{id}", orders.GetAOrder)
-	r.Delete("/droporder/{id}", orders.DeleteAOrder)
-
+	r.Post	("/restaurants", restaurants.AddARestaurant)
+	r.Get	("/restaurants", restaurants.GetRestaurants)
+	r.Get	("/restaurants/{id}", restaurants.GetARestaurant)
+	r.Delete("/restaurants/{id}", restaurants.DeleteARestaurant)
+	
 	http.ListenAndServe(":"+getPort("PORT"), r)
 
 }
