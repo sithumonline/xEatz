@@ -1,4 +1,4 @@
-package orders
+package handler
 
 import "github.com/jinzhu/gorm"
 

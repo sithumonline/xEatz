@@ -1,4 +1,4 @@
-package orders
+package handler
 
 import (
 	"encoding/json"
@@ -6,13 +6,10 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/jinzhu/gorm"
-
-	"github.com/ebonynon/xEatz/infrastructure/db"
 )
 
 // OpenDB declare the database
-var OpenDB *gorm.DB = db.Database()
+//var OpenDB *gorm.DB = db.Database()
 
 // AddAOrder adds a new order
 // POST /addorder

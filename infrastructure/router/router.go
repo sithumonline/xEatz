@@ -1,10 +1,7 @@
 package router
 
 import (
-	"github.com/ebonynon/xEatz/usecase/customers"
-	"github.com/ebonynon/xEatz/usecase/fooditems"
-	"github.com/ebonynon/xEatz/usecase/orders"
-	"github.com/ebonynon/xEatz/usecase/restaurants"
+	"github.com/ebonynon/xEatz/usecase/handler"
 	"github.com/go-chi/chi"
 )
 
@@ -24,10 +21,10 @@ func NewRouter() chi.Router {
 func OrdersRouter() chi.Router {
 	r := chi.NewRouter()
 
-	r.Post("/orders", orders.AddAOrder)
-	r.Get("/orders", orders.GetOrders)
-	r.Get("/orders/{id}", orders.GetAOrder)
-	r.Delete("/orders/{id}", orders.DeleteAOrder)
+	r.Post("/", handler.AddAOrder)
+	r.Get("/", handler.GetOrders)
+	r.Get("/{id}", handler.GetAOrder)
+	r.Delete("/{id}", handler.DeleteAOrder)
 
 	return r
 }
@@ -36,10 +33,10 @@ func OrdersRouter() chi.Router {
 func CustomersRouter() chi.Router {
 	r := chi.NewRouter()
 
-	r.Post("/", customers.AddACustomer)
-	r.Get("/", customers.GetCustomers)
-	r.Get("/{id}", customers.GetACustomer)
-	r.Delete("/{id}", customers.DeleteACustomer)
+	r.Post("/", handler.AddACustomer)
+	r.Get("/", handler.GetCustomers)
+	r.Get("/{id}", handler.GetACustomer)
+	r.Delete("/{id}", handler.DeleteACustomer)
 
 	return r
 }
@@ -48,10 +45,10 @@ func CustomersRouter() chi.Router {
 func FoodIteamRouter() chi.Router {
 	r := chi.NewRouter()
 
-	r.Post("/", fooditems.AddAFoodItem)
-	r.Get("/", fooditems.GetFoodItems)
-	r.Get("/{id}", fooditems.GetAFoodItem)
-	r.Delete("/{id}", fooditems.DeleteAFoodItem)
+	r.Post("/", handler.AddAFoodItem)
+	r.Get("/", handler.GetFoodItems)
+	r.Get("/{id}", handler.GetAFoodItem)
+	r.Delete("/{id}", handler.DeleteAFoodItem)
 
 	return r
 }
@@ -60,10 +57,10 @@ func FoodIteamRouter() chi.Router {
 func RestaurantsRouter() chi.Router {
 	r := chi.NewRouter()
 
-	r.Post("/", restaurants.AddARestaurant)
-	r.Get("/", restaurants.GetRestaurants)
-	r.Get("/{id}", restaurants.GetARestaurant)
-	r.Delete("/{id}", restaurants.DeleteARestaurant)
+	r.Post("/", handler.AddARestaurant)
+	r.Get("/", handler.GetRestaurants)
+	r.Get("/{id}", handler.GetARestaurant)
+	r.Delete("/{id}", handler.DeleteARestaurant)
 
 	return r
 }

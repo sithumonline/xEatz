@@ -1,4 +1,4 @@
-package restaurants
+package handler
 
 import "github.com/jinzhu/gorm"
 
