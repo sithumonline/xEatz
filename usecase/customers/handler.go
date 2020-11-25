@@ -8,7 +8,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/jinzhu/gorm"
 
-	"github.com/ebonynon/xEatz/db"
+	"github.com/ebonynon/xEatz/infrastructure/db"
 )
 
 // OpenDB declare the database

@@ -2,15 +2,18 @@ module github.com/ebonynon/xEatz
 
 go 1.15
 
-replace github.com/ebonynon/xEatz/restaurants => ./restaurants
+replace github.com/ebonynon/xEatz/usecase/orders => ./usecase/orders
 
-replace github.com/ebonynon/xEatz/db => ./db
+replace github.com/ebonynon/xEatz/usecase/customers => ./usecase/customers
 
-replace github.com/ebonynon/xEatz/fooditems => ./fooditems
+replace github.com/ebonynon/xEatz/usecase/fooditems => ./usecase/fooditems
 
-replace github.com/ebonynon/xEatz/customers => ./customers
+replace github.com/ebonynon/xEatz/usecase/restaurants => ./usecase/restaurants
 
-replace github.com/ebonynon/xEatz/orders => ./orders
+replace github.com/ebonynon/xEatz/infrastructure/db => ./infrastructure/db
+
+replace github.com/ebonynon/xEatz/infrastructure/router => ./infrastructure/router
+
 
 require (
 	github.com/go-chi/chi v1.5.0
