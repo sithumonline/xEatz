@@ -7,7 +7,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 
-	"github.com/ebonynon/xEatz/infrastructure/router"
+	"github.com/ebonynon/xEatz/api/router"
 )
 
 func main() {
