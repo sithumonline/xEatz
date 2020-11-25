@@ -6,13 +6,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
-	"github.com/jinzhu/gorm"
-
-	"github.com/ebonynon/xEatz/infrastructure/db"
 )
-
-// OpenDB declare the database
-var OpenDB *gorm.DB = db.Database()
 
 // AddACustomer adds a new customer
 // POST /addcustomer

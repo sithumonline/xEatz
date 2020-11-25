@@ -8,9 +8,6 @@ import (
 	"github.com/go-chi/chi"
 )
 
-// OpenDB declare the database
-//var OpenDB *gorm.DB = db.Database()
-
 // AddAOrder adds a new order
 // POST /addorder
 func AddAOrder(w http.ResponseWriter, r *http.Request) {

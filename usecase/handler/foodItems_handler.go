@@ -8,9 +8,6 @@ import (
 	"github.com/go-chi/chi"
 )
 
-// OpenDB declare the database
-//var OpenDB *gorm.DB = db.Database()
-
 // AddAFoodItem adds a new food Item
 // POST /addfooditem
 func AddAFoodItem(w http.ResponseWriter, r *http.Request) {
