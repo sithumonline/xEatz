@@ -6,7 +6,20 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
+	"github.com/jinzhu/gorm"
 )
+
+// FoodItems defines the properties of a fooditems
+type FoodItems struct {
+	gorm.Model
+	ItmID      int
+	ResID      int
+	Name       string
+	ItmKind    string
+	smallPrice int
+	largePrice int
+	ImgURL     string
+}
 
 // AddAFoodItem adds a new food Item
 // POST /addfooditem

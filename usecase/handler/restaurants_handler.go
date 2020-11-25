@@ -6,7 +6,18 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
+	"github.com/jinzhu/gorm"
 )
+
+// Restaurants defines the properties of a restaurants
+type Restaurants struct {
+	gorm.Model
+	ResID    int
+	Name     string
+	Phone    int
+	Location string
+	ImgURL   string
+}
 
 // AddARestaurant adds a new restaurant
 // POST /addrestaurant
