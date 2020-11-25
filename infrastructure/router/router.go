@@ -1,7 +1,7 @@
 package router
 
 import (
-	"github.com/ebonynon/xEatz/usecase/handler"
+	"github.com/ebonynon/xEatz/api/handler"
 	"github.com/go-chi/chi"
 )
 
