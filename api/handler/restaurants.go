@@ -12,9 +12,9 @@ import (
 // Restaurants defines the properties of a restaurants
 type Restaurants struct {
 	gorm.Model
-	ResID    int
+	ResID    string
 	Name     string
-	Phone    int
+	Phone    string
 	Location string
 	ImgURL   string
 }
