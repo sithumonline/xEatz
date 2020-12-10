@@ -8,8 +8,8 @@ import (
 func NewRouter() chi.Router {
 	r := chi.NewRouter()
 
-	r.Mount("/orders", RestaurantsRouter())
-	r.Mount("/customers", RestaurantsRouter())
+	r.Mount("/orders", OrdersRouter())
+	r.Mount("/customers", CustomersRouter())
 	r.Mount("/food-items", FoodIteamRouter())
 	r.Mount("/restaurants", RestaurantsRouter())
 
