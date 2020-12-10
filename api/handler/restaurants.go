@@ -83,8 +83,11 @@ func UpdateARestaurant(w http.ResponseWriter, r *http.Request) {
 	var restaurants []Restaurants
 	restaurantID := chi.URLParam(r, "id")
 
-	OpenDB.First(&restaurant, restaurantID)
-	OpenDB.Update(&restaurant)
+	json.NewDecoder(r.Body).Decode(&restaurant)
+
+	fmt.Println(restaurant)
+
+	OpenDB.Model(&restaurant).Where("ID = ?", restaurantID).Updates(restaurant)
 	OpenDB.Find(&restaurants)
 
 	json.NewEncoder(w).Encode(&restaurants)
