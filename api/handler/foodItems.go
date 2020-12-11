@@ -76,3 +76,22 @@ func DeleteAFoodItem(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&foodItems)
 
 }
+
+// UpdateAFoodItem update food Item
+// PUT /dropfooditem/{id}
+func UpdateAFoodItem(w http.ResponseWriter, r *http.Request) {
+
+	var foodItem FoodItems
+	var foodItems []FoodItems
+	foodID := chi.URLParam(r, "id")
+
+	json.NewDecoder(r.Body).Decode(&foodItem)
+
+	fmt.Println(foodItem)
+
+	OpenDB.Model(&foodItem).Where("ID = ?", foodID).Updates(foodItem)
+	OpenDB.Find(&foodItems)
+
+	json.NewEncoder(w).Encode(&foodItems)
+
+}

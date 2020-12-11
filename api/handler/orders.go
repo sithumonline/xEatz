@@ -74,3 +74,22 @@ func DeleteAOrder(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&orders)
 
 }
+
+// UpdateAOrder update order
+// PUT /droporder/{id}
+func UpdateAOrder(w http.ResponseWriter, r *http.Request) {
+
+	var order Orders
+	var orders []Orders
+	ordID := chi.URLParam(r, "id")
+
+	json.NewDecoder(r.Body).Decode(&order)
+
+	fmt.Println(order)
+
+	OpenDB.Model(&order).Where("ID = ?", ordID).Updates(order)
+	OpenDB.Find(&orders)
+
+	json.NewEncoder(w).Encode(&orders)
+
+}

@@ -12,6 +12,7 @@ func CustomersRouter() chi.Router {
 	r.Post("/", handler.AddACustomer)
 	r.Get("/", handler.GetCustomers)
 	r.Get("/{id}", handler.GetACustomer)
+	r.Put("/{id}", handler.UpdateACustomer)
 	r.Delete("/{id}", handler.DeleteACustomer)
 
 	return r

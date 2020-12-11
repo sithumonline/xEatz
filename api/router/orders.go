@@ -12,6 +12,7 @@ func OrdersRouter() chi.Router {
 	r.Post("/", handler.AddAOrder)
 	r.Get("/", handler.GetOrders)
 	r.Get("/{id}", handler.GetAOrder)
+	r.Put("/{id}", handler.UpdateAOrder)
 	r.Delete("/{id}", handler.DeleteAOrder)
 
 	return r

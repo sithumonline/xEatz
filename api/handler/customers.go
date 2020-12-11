@@ -74,3 +74,22 @@ func DeleteACustomer(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(&customers)
 
 }
+
+// UpdateACustomer update customer
+// PUT /dropcustomer/{id}
+func UpdateACustomer(w http.ResponseWriter, r *http.Request) {
+
+	var customer Customers
+	var customers []Customers
+	cusID := chi.URLParam(r, "id")
+
+	json.NewDecoder(r.Body).Decode(&customer)
+
+	fmt.Println(customer)
+
+	OpenDB.Model(&customer).Where("ID = ?", cusID).Updates(customer)
+	OpenDB.Find(&customers)
+
+	json.NewEncoder(w).Encode(&customers)
+
+}
