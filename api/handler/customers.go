@@ -76,7 +76,7 @@ func DeleteACustomer(w http.ResponseWriter, r *http.Request) {
 }
 
 // UpdateACustomer update customer
-// PUT /dropcustomer/{id}
+// PUT /updatecustomer/{id}
 func UpdateACustomer(w http.ResponseWriter, r *http.Request) {
 
 	var customer Customers

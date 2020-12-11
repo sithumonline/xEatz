@@ -61,7 +61,7 @@ func GetAFoodItem(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// DeleteAFoodItem drop restaurant
+// DeleteAFoodItem drop food Item
 // DELETE /dropfooditem/{id}
 func DeleteAFoodItem(w http.ResponseWriter, r *http.Request) {
 
@@ -78,7 +78,7 @@ func DeleteAFoodItem(w http.ResponseWriter, r *http.Request) {
 }
 
 // UpdateAFoodItem update food Item
-// PUT /dropfooditem/{id}
+// PUT /updatefooditem/{id}
 func UpdateAFoodItem(w http.ResponseWriter, r *http.Request) {
 
 	var foodItem FoodItems

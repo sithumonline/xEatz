@@ -76,7 +76,7 @@ func DeleteAOrder(w http.ResponseWriter, r *http.Request) {
 }
 
 // UpdateAOrder update order
-// PUT /droporder/{id}
+// PUT /updateorder/{id}
 func UpdateAOrder(w http.ResponseWriter, r *http.Request) {
 
 	var order Orders

@@ -76,7 +76,7 @@ func DeleteARestaurant(w http.ResponseWriter, r *http.Request) {
 }
 
 // UpdateARestaurant update restaurant
-// PUT /droprestaurant/{id}
+// PUT /updaterestaurant/{id}
 func UpdateARestaurant(w http.ResponseWriter, r *http.Request) {
 
 	var restaurant Restaurants
