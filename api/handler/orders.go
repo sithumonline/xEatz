@@ -12,10 +12,10 @@ import (
 // Orders defines the properties of a orders
 type Orders struct {
 	gorm.Model
-	CusID      int
-	OrdID      int
-	ResID      int
-	NoItems    int
+	CusID      string
+	OrdID      string
+	ResID      string
+	NoItems    string
 	paymentWay string
 }
 

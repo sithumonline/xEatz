@@ -12,12 +12,12 @@ import (
 // FoodItems defines the properties of a fooditems
 type FoodItems struct {
 	gorm.Model
-	ItmID      int
-	ResID      int
+	ItmID      string
+	ResID      string
 	Name       string
 	ItmKind    string
-	smallPrice int
-	largePrice int
+	smallPrice string
+	largePrice string
 	ImgURL     string
 }
 

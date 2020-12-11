@@ -12,10 +12,10 @@ import (
 // Customers defines the properties of a customers
 type Customers struct {
 	gorm.Model
-	CusID int
+	CusID string
 	FName string
 	LName string
-	Phone int
+	Phone string
 	Mail  string
 }
 
