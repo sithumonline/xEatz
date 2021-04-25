@@ -60,7 +60,7 @@ func TestAddACustomer(t *testing.T) {
 			if err != nil {
 				t.Errorf("faile to marshel : %v", err)
 			}
-			req, err := http.NewRequest("GET", "localhost:3080/api/v1/customers", bytes.NewBuffer(out))
+			req, err := http.NewRequest(http.MethodPost, "localhost:3080/api/v1/customers", bytes.NewBuffer(out))
 			if err != nil {
 				t.Fatalf("could not create request: %v", err)
 			}

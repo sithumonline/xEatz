@@ -18,15 +18,15 @@ func TestCustomersRouter(t *testing.T) {
 	}{
 		{
 			"one",
-			"2",
+			"7",
 		},
 		{
 			"two",
-			"2",
+			"12",
 		},
 		{
 			"three",
-			"55",
+			"26",
 		},
 		{
 			"four",
