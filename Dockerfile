@@ -8,7 +8,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN go build -ldflags="-w -s" -o go-puso .
+RUN go build -ldflags="-w -s" -o xEaz .
 
 FROM alpine:3.13.4
 
@@ -16,7 +16,7 @@ RUN apk add --no-cache libstdc++ libc6-compat
 
 WORKDIR /app
 
-COPY --from=builder /app/go-puso /usr/local/bin/
+COPY --from=builder /app/xEaz /usr/local/bin/
 
 EXPOSE 3080
 
